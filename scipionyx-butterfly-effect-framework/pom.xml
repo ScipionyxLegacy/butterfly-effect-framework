@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<name>Butterfly Effect Framework</name>
+	<description>Butterfly Effect - Backend</description>
+	<url>scipionyx.io/butteflyeffect-framework</url>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>butterly-effect-framework</groupId>
+	<artifactId>parent</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.3.RELEASE</version>
+	</parent>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<vaadin.version>8.0.6</vaadin.version>
+		<vaadin.spring>2.0.1</vaadin.spring>
+
+
+		<java.version>1.8</java.version>
+
+		<spring.cloud.version>Dalston.RELEASE</spring.cloud.version>
+
+		<docker.image.prefix>scipionyx</docker.image.prefix>
+		<docker.registry.server>docker.io</docker.registry.server>
+
+		<scipionyx.frontend.port>80</scipionyx.frontend.port>
+		<scipionyx.backend.port>8888</scipionyx.backend.port>
+
+	</properties>
+
+	<organization>
+		<name>Scipionyx</name>
+		<url>www.scipionyx.com</url>
+	</organization>
+
+	<repositories>
+
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+
+		<repository>
+			<id>vaadin-prereleases</id>
+			<url>https://maven.vaadin.com/vaadin-prereleases</url>
+		</repository>
+
+	</repositories>
+
+	<build>
+
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/webapp</directory>
+			</resource>
+		</resources>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- Vaadin -->
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-spring-boot-starter</artifactId>
+				<version>${vaadin.spring}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-bom</artifactId>
+				<version>${vaadin.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- Spring -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<optional>true</optional>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>vaadin-prereleases</id>
+			<name>Vaadin Pre-releases</name>
+			<url>https://maven.vaadin.com/vaadin-prereleases</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/scipionyx/ButterflyEffect/issues</url>
+	</issueManagement>
+
+
+	<distributionManagement>
+	
+		<snapshotRepository>
+			<id>bintray-scipionyx-butterfly-effect</id>
+			<name>scipionyx-butterfly-effect</name>
+			<url>https://api.bintray.com/maven/scipionyx/butterfly-effect/;publish=1</url>
+		</snapshotRepository>
+		
+		<repository>
+			<id>bintray-scipionyx-butterfly-effect</id>
+			<name>scipionyx-butterfly-effect</name>
+			<url>https://api.bintray.com/maven/scipionyx/butterfly-effect/;publish=1</url>
+		</repository>
+		
+	</distributionManagement>
+
+	<modules>
+		<module>../scipionyx0butterfly-effect-framework-api</module>
+	</modules>
+</project>
