@@ -59,5 +59,9 @@
 		<module>
 			../scipionyx-butterfly-effect-framework-api-configuration
 		</module>
+		
+		<module>
+			../scipionyx-butterfly-effect-framework-api-infrastructure
+		</module>
 	</modules>
 </project>
