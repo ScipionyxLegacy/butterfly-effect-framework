@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>api-parent</artifactId>
+
+	<parent>
+		<groupId>butterly-effect-framework</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../scipionyx-butterfly-effect-framework</relativePath>
+	</parent>
+
+
+	<packaging>pom</packaging>
+
+
+	<name>Butterfly Effect - API</name>
+
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+	</dependencies>
+	
+	<distributionManagement>
+                <repository>
+                <id>bintray-scipionyx-butterfly-effect</id>
+                <name>scipionyx-butterfly-effect</name>
+                <url>https://api.bintray.com/maven/scipionyx/butterfly-effect/${project.name}/;publish=1</url>
+                </repository>
+</distributionManagement>
+	
+	<modules>
+		<module>
+			../scipionyx-butterfly-effect-framework-api-configuration
+		</module>
+	</modules>
+</project>

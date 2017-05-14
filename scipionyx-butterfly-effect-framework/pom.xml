@@ -173,6 +173,6 @@
 	</distributionManagement>
 
 	<modules>
-		<module>../scipionyx0butterfly-effect-framework-api</module>
+		<module>../scipionyx-butterfly-effect-framework-api</module>
 	</modules>
 </project>
