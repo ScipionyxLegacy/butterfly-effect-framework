@@ -18,7 +18,7 @@
 
 	<name>Butterfly Effect - API</name>
 
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,22 +46,18 @@
 			<version>1.0.0.Final</version>
 		</dependency>
 	</dependencies>
-	
-	<distributionManagement>
-                <repository>
-                <id>bintray-scipionyx-butterfly-effect</id>
-                <name>scipionyx-butterfly-effect</name>
-                <url>https://api.bintray.com/maven/scipionyx/butterfly-effect/${project.name}/;publish=1</url>
-                </repository>
-</distributionManagement>
-	
+
 	<modules>
 		<module>
 			../scipionyx-butterfly-effect-framework-api-configuration
 		</module>
-		
+
 		<module>
 			../scipionyx-butterfly-effect-framework-api-infrastructure
+		</module>
+		
+		<module>
+			../scipionyx-butterfly-effect-framework-api-jobmanagement
 		</module>
 	</modules>
 </project>

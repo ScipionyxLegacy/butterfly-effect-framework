@@ -1,11 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
+	
+	<name>Butterfly Effect - API - Job Management</name>
 
-	<artifactId>api-configuration</artifactId>
-
-	<name>Butterfly Effect - API - Configuration</name>
+	<artifactId>api-jobmanagement</artifactId>
 
 	<parent>
 		<groupId>butterly-effect-framework</groupId>
@@ -14,4 +13,11 @@
 		<relativePath>../scipionyx-butterfly-effect-framework-api</relativePath>
 	</parent>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-core</artifactId>
+		</dependency>
+	</dependencies>
+	
 </project>

@@ -42,7 +42,7 @@
 
 	<organization>
 		<name>Scipionyx</name>
-		<url>www.scipionyx.com</url>
+		<url>scipionyx.io</url>
 	</organization>
 
 	<repositories>
@@ -155,21 +155,12 @@
 		<url>https://github.com/scipionyx/ButterflyEffect/issues</url>
 	</issueManagement>
 
-
 	<distributionManagement>
-	
-		<snapshotRepository>
-			<id>bintray-scipionyx-butterfly-effect</id>
-			<name>scipionyx-butterfly-effect</name>
-			<url>https://api.bintray.com/maven/scipionyx/butterfly-effect/;publish=1</url>
-		</snapshotRepository>
-		
 		<repository>
 			<id>bintray-scipionyx-butterfly-effect</id>
 			<name>scipionyx-butterfly-effect</name>
-			<url>https://api.bintray.com/maven/scipionyx/butterfly-effect/;publish=1</url>
+			<url>https://api.bintray.com/maven/scipionyx/butterfly-effect/parent/;publish=1</url>
 		</repository>
-		
 	</distributionManagement>
 
 	<modules>
