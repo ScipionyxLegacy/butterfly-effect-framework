@@ -141,32 +141,11 @@
 
 	<packaging>pom</packaging>
 
-
 	<name>Butterfly Effect - Frontend</name>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>api-ui</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>api-configuration</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>frontend-core</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	
 	<modules>
 		<module>../framework-frontend-configuration</module>
 		<module>../framework-frontend-core</module>
-		
 		<module>../framework-frontend-jobmanager</module>
 		<module>../framework-frontend-model</module>
 		<module>../framework-frontend-plugin</module>

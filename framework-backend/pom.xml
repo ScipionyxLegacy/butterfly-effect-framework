@@ -65,31 +65,6 @@
 	<organization>
 		<name>Scipionyx Software</name>
 	</organization>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>api-configuration</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>api-infrastructure</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>api-model</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>backend-configuration</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	
 	<modules>
 		<module>../framework-backend-configuration</module>
