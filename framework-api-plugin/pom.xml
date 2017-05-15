@@ -5,7 +5,7 @@
   	<version>0.1.0-SNAPSHOT</version>
   	<artifactId>api-parent</artifactId>
   	<groupId>butterly-effect-framework</groupId>
-  	<relativePath>../scipionyx-butterfly-effect-framework-api</relativePath>
+  	<relativePath>../framework-api</relativePath>
   </parent>
   <name>Butterfly Effect - API - Plugin</name>
 </project>

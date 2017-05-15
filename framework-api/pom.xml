@@ -9,7 +9,7 @@
 		<groupId>butterly-effect-framework</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../scipionyx-butterfly-effect-framework</relativePath>
+		<relativePath>../framework</relativePath>
 	</parent>
 
 
@@ -47,30 +47,6 @@
 		</dependency>
 	</dependencies>
 
-	<modules>
-		<module>
-			../scipionyx-butterfly-effect-framework-api-configuration
-		</module>
-
-		<module>
-			../scipionyx-butterfly-effect-framework-api-infrastructure
-		</module>
-		
-		<module>
-			../scipionyx-butterfly-effect-framework-api-jobmanagement
-		</module>
-		<module>
-			../scipionyx-butterfly-effect-framework-api-model
-		</module>
-		<module>
-			../scipionyx-butterfly-effect-framework-api-plugin
-		</module>
-		<module>
-			../scipionyx-butterfly-effect-framework-api-service
-		</module>
-		
-		<module>../scipionyx-butterfly-effect-framework-api-ui</module>
-	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -80,4 +56,13 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<modules>
+		<module>../framework-api-configuration</module>
+		<module>../framework-api-infrastructure</module>
+		<module>../framework-api-jobmanagement</module>
+		<module>../framework-api-model</module>
+		<module>../framework-api-plugin</module>
+		<module>../framework-api-service</module>
+		<module>../framework-api-ui</module>
+	</modules>
 </project>
