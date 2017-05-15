@@ -166,8 +166,9 @@
 	<modules>
 		
 		
-		<module>../framework-frontend</module>
+		
 		<module>../framework-api</module>
 		<module>../framework-backend</module>
+		<module>../framework-frontend</module>
 	</modules>
 </project>
