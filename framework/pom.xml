@@ -166,5 +166,6 @@
 	<modules>
 		<module>../scipionyx-butterfly-effect-framework-api</module>
 		<module>../scipionyx-butterfly-effect-framework-backend</module>
+		<module>../framework-frontend</module>
 	</modules>
 </project>
