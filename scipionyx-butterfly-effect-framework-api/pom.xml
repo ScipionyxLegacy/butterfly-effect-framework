@@ -62,6 +62,9 @@
 		<module>
 			../scipionyx-butterfly-effect-framework-api-model
 		</module>
+		<module>
+			../scipionyx-butterfly-effect-framework-api-plugin
+		</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
