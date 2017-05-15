@@ -7,5 +7,5 @@ install: true
 
 script:
   - sudo apt-get update && sudo apt-get install oracle-java8-installer
-  - cd scipionyx-butterfly-effect-framework/
+  - cd framework/
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
