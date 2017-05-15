@@ -6,7 +6,7 @@
 	<artifactId>frontend-plugin</artifactId>
 
 	<parent>
-		<groupId>butterly-effect-framework</groupId>
+		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>frontend-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../framework-frontend</relativePath>

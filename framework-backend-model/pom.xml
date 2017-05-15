@@ -5,7 +5,7 @@
 	<artifactId>backend-model</artifactId>
 
 	<parent>
-		<groupId>butterly-effect-framework</groupId>
+		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>backend-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../framework-backend</relativePath>
@@ -17,11 +17,11 @@
 
 
 		<dependency>
-			<groupId>butterly-effect-framework</groupId>
+			<groupId>io.scipionyx.framework</groupId>
 			<artifactId>api-model</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>butterly-effect-framework</groupId>
+			<groupId>io.scipionyx.framework</groupId>
 			<artifactId>backend-configuration</artifactId>
 		</dependency>
 	</dependencies>

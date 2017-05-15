@@ -6,7 +6,7 @@
 	<artifactId>api-model</artifactId>
 
 	<parent>
-		<groupId>butterly-effect-framework</groupId>
+		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>api-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../framework-api</relativePath>
@@ -16,7 +16,7 @@
 	<name>Butterfly Effect - API - Model</name>
 	<dependencies>
 		<dependency>
-			<groupId>butterly-effect-framework</groupId>
+			<groupId>io.scipionyx.framework</groupId>
 			<artifactId>api-configuration</artifactId>
 		</dependency>
 	</dependencies>

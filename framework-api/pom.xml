@@ -10,7 +10,7 @@
 	<name>Butterfly Effect - API</name>
 
 	<parent>
-		<groupId>butterly-effect-framework</groupId>
+		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../framework</relativePath>

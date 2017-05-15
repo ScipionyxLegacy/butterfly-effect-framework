@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>butterly-effect-framework</groupId>
+		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../framework</relativePath>
@@ -95,7 +95,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>butterly-effect-framework</groupId>
+			<groupId>io.scipionyx.framework</groupId>
 			<artifactId>api-ui</artifactId>
 		</dependency>
 	</dependencies>

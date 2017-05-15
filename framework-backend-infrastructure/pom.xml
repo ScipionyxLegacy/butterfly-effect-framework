@@ -7,7 +7,7 @@
 	<name>Butterfly Effect - Backend - Infrastructure</name>
 
 	<parent>
-		<groupId>butterly-effect-framework</groupId>
+		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>backend-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../framework-backend</relativePath>
@@ -27,7 +27,7 @@
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>butterly-effect-framework</groupId>
+			<groupId>io.scipionyx.framework</groupId>
 			<artifactId>api-infrastructure</artifactId>
 		</dependency>
 	</dependencies>
