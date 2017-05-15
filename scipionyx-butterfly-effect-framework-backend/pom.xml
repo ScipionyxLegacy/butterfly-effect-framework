@@ -77,6 +77,9 @@
 		<module>
 			../scipionyx-butterfly-effect-framework-backend-jobmanagement
 		</module>
+		<module>
+			../scipionyx-butterfly-effect-framework-backend-model
+		</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
@@ -93,6 +96,16 @@
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>api-jobmanagement</artifactId>
+				<version>0.1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>butterly-effect-framework</groupId>
+				<artifactId>api-model</artifactId>
+				<version>0.1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>butterly-effect-framework</groupId>
+				<artifactId>backend-configuration</artifactId>
 				<version>0.1.0-SNAPSHOT</version>
 			</dependency>
 		</dependencies>

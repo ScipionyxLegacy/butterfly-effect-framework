@@ -2,9 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>backend-infrastructure</artifactId>
-
-	<name>Butterfly Effect - Backend - Infrastructure</name>
+	<artifactId>backend-model</artifactId>
 
 	<parent>
 		<groupId>butterly-effect-framework</groupId>
@@ -14,21 +12,33 @@
 	</parent>
 
 	<dependencies>
+
+
+
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-elasticsearch</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
+			<groupId>butterly-effect-framework</groupId>
+			<artifactId>api-model</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>butterly-effect-framework</groupId>
-			<artifactId>api-infrastructure</artifactId>
+			<artifactId>backend-configuration</artifactId>
 		</dependency>
 	</dependencies>
+	
+	<name>Butterfly Effect - Backend - Model</name>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.12</version>
+				<configuration>
+					<skipDocker>true</skipDocker>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 </project>
