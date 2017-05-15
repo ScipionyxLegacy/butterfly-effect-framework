@@ -170,10 +170,15 @@
 				<artifactId>backend-configuration</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>frontend-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>butterly-effect-framework</groupId>
+				<artifactId>frontend-configuration</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
