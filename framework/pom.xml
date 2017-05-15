@@ -138,6 +138,11 @@
 				<artifactId>spring-boot-devtools</artifactId>
 				<optional>true</optional>
 			</dependency>
+			<dependency>
+				<groupId>butterly-effect-framework</groupId>
+				<artifactId>api-jobmanagement</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 
 	</dependencyManagement>
@@ -164,9 +169,6 @@
 	</distributionManagement>
 
 	<modules>
-		
-		
-		
 		<module>../framework-api</module>
 		<module>../framework-backend</module>
 		<module>../framework-frontend</module>

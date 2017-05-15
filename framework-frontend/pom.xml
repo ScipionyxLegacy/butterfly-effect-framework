@@ -166,5 +166,12 @@
 	<modules>
 		<module>../framework-frontend-configuration</module>
 		<module>../framework-frontend-core</module>
+		
+		<module>../framework-frontend-jobmanager</module>
+		<module>../framework-frontend-model</module>
+		<module>../framework-frontend-plugin</module>
+		<module>../framework-frontend-security</module>
+		<module>../framework-frontend-servicemanager</module>
+		<module>../framework-frontend-sessionmanager</module>
 	</modules>
 </project>

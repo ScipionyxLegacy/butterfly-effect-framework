@@ -45,12 +45,12 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -66,36 +66,31 @@
 		<name>Scipionyx Software</name>
 	</organization>
 
-	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>api-configuration</artifactId>
-				<version>0.1.0-SNAPSHOT</version>
+				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>api-infrastructure</artifactId>
-				<version>0.1.0-SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>butterly-effect-framework</groupId>
-				<artifactId>api-jobmanagement</artifactId>
-				<version>0.1.0-SNAPSHOT</version>
+				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>api-model</artifactId>
-				<version>0.1.0-SNAPSHOT</version>
+				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>backend-configuration</artifactId>
-				<version>0.1.0-SNAPSHOT</version>
+				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<modules>
 		<module>../framework-backend-configuration</module>
 		<module>../framework-backend-infrastructure</module>
