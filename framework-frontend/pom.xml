@@ -149,8 +149,22 @@
 			<dependency>
 				<groupId>butterly-effect-framework</groupId>
 				<artifactId>api-ui</artifactId>
-				<version>0.1.0-SNAPSHOT</version>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>butterly-effect-framework</groupId>
+				<artifactId>api-configuration</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>butterly-effect-framework</groupId>
+				<artifactId>frontend-core</artifactId>
+				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<modules>
+		<module>../framework-frontend-configuration</module>
+		<module>../framework-frontend-core</module>
+	</modules>
 </project>
