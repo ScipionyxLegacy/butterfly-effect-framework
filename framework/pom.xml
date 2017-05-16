@@ -9,7 +9,7 @@
 
 	<groupId>io.scipionyx.framework</groupId>
 	<artifactId>parent</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 
 	<packaging>pom</packaging>
 
@@ -58,7 +58,7 @@
 
 		<repository>
 			<id>clojars</id>
-			<url>http://clojars.org/repo/</url>
+			<url>http://clojars.org/repo</url>
 		</repository>
 
 	</repositories>
@@ -204,19 +204,11 @@
 	</issueManagement>
 
 	<distributionManagement>
-
-		<snapshotRepository>
-			<id>clojars</id>
-			<name>Clojars repository</name>
-			<url>https://clojars.org/repo</url>
-		</snapshotRepository>
-
 		<repository>
-			<id>clojars</id>
-			<name>Clojars repository</name>
-			<url>https://clojars.org/repo</url>
+			<id>bintray-scipionyxcorp-io.scipionyx.butterflyeffect</id>
+			<name>scipionyxcorp-io.scipionyx.butterflyeffect</name>
+			<url>https://api.bintray.com/maven/scipionyxcorp/io.scipionyx.butterflyeffect/framework/;publish=1</url>
 		</repository>
-
 	</distributionManagement>
 
 	<modules>

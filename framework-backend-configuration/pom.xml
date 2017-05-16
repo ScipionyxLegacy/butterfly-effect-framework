@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>io.scipionyx.framework</groupId>
 		<artifactId>backend-parent</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<version>0.1.0</version>
 		<relativePath>../framework-backend</relativePath>
 	</parent>
 
