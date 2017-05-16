@@ -18,10 +18,6 @@ public abstract class AbstractConfigurationService<T> {
 
 	private List<T> configurations;
 
-	/**
-	 * @throws IOException
-	 * 
-	 */
 	@PostConstruct
 	public void init() throws IOException {
 		//
@@ -35,10 +31,6 @@ public abstract class AbstractConfigurationService<T> {
 
 	}
 
-	/**
-	 * @throws IOException
-	 * 
-	 */
 	public abstract void readConfigurations() throws IOException;
 
 	/**
@@ -47,9 +39,12 @@ public abstract class AbstractConfigurationService<T> {
 	 * a jar, most likelly it can not find the files within jars.
 	 * 
 	 * @param name
+	 *            resource name,
 	 * @param classLoader
-	 * @return
+	 *            classloader
+	 * @return list of files as input stream
 	 * @throws IOException
+	 *             if any error
 	 */
 	protected List<InputStream> loadResources(final String name, final ClassLoader classLoader) throws IOException {
 		final List<InputStream> list = new ArrayList<InputStream>();

@@ -36,12 +36,12 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IService
 
 /**
  * 
- * @author rmendes
+ * @author Renato Mendes
  *
  * @param <T>
- *            Service
- * @param <E>
- *            Entity
+ *            Service service class
+ * @param <ENTITY>
+ *            Entity entity Class
  */
 public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTITY>
 		extends AbstractRestController<IRepositoryService<ENTITY>, ENTITY> {
@@ -67,13 +67,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 		arrayClazz = (Class<ENTITY[]>) Array.newInstance(entityClazz, 0).getClass();
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/findAll", method = { RequestMethod.GET, RequestMethod.POST })
 	public final ResponseEntity<Iterable<? extends ENTITY>> findAll() throws RestClientException, Exception {
 		LOGGER.debug("findAll");
@@ -81,13 +74,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 		return (new ResponseEntity<>(repository.findAll(), HttpStatus.OK));
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/findAllOrderBy", method = { RequestMethod.GET })
 	public final ResponseEntity<List<ENTITY>> findAllOrderBy(String orderBy) throws RestClientException, Exception {
 		LOGGER.debug("findAllOrderBy");
@@ -114,13 +100,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/findAllByOrderBy", method = { RequestMethod.PUT })
 	public final ResponseEntity<List<ENTITY>> findAllByOrderBy(
 			@RequestBody(required = true) Map<String, Object> parameters, HttpServletRequest request)
@@ -150,12 +129,12 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 				switch (readValue.getOperation()) {
 				case EQUALS:
 					Predicate equal = criteriaBuilder.equal(from.get(key), readValue.getValue());
-					select = select.where(equal);	
+					select = select.where(equal);
 					break;
 				default:
 					break;
 				}
-				
+
 			}
 		}
 
@@ -170,13 +149,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/save", method = { RequestMethod.PUT })
 	public final ResponseEntity<ENTITY> save(@RequestBody(required = true) ENTITY entity)
 			throws RestClientException, Exception {
@@ -193,13 +165,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/deleteById", method = { RequestMethod.DELETE })
 	public final ResponseEntity<String> delete(@RequestParam(required = true) Long id)
 			throws RestClientException, Exception {
@@ -214,13 +179,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 		}
 	}
 
-	/**
-	 * 
-	 * @param entity
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/deleteEntity", method = { RequestMethod.DELETE })
 	public final ResponseEntity<String> delete(@RequestBody(required = true) ENTITY entity)
 			throws RestClientException, Exception {
@@ -235,13 +193,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 		}
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/deleteList", method = { RequestMethod.DELETE })
 	public final ResponseEntity<String> delete(@RequestBody Iterable<ENTITY> entities)
 			throws RestClientException, Exception {
@@ -256,13 +207,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 		}
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/count", method = { RequestMethod.GET })
 	public final ResponseEntity<Long> count(@RequestParam(required = true) String all)
 			throws RestClientException, Exception {
@@ -276,13 +220,6 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 		}
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/findOne/{id}", method = { RequestMethod.GET })
 	public final ResponseEntity<ENTITY> findOne(@PathVariable Long id) throws RestClientException, Exception {
 		LOGGER.debug("findOne, paramId=", id);

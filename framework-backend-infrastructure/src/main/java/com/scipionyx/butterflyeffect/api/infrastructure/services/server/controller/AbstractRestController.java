@@ -13,12 +13,12 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IReposit
 
 /**
  * 
- * @author rmendes
+ * @author Renato Mendes
  *
  * @param <T>
- *            Service
- * @param <E>
- *            Entity
+ *            Service service class
+ * @param <ENTITY>
+ *            Entity entity class
  */
 public abstract class AbstractRestController<T extends IRepositoryService<ENTITY>, ENTITY> {
 
@@ -27,26 +27,12 @@ public abstract class AbstractRestController<T extends IRepositoryService<ENTITY
 	@Autowired
 	protected transient T service;
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/ping", method = { RequestMethod.GET, RequestMethod.POST })
 	public final ResponseEntity<String> ping() throws RestClientException, Exception {
 		LOGGER.debug("Ping request");
 		return (new ResponseEntity<>(service.ping(), HttpStatus.OK));
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/health", method = { RequestMethod.GET, RequestMethod.POST })
 	public final ResponseEntity<String> health() throws RestClientException, Exception {
 		LOGGER.debug("Health request");

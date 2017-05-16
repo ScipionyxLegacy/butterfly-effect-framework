@@ -13,17 +13,10 @@ import com.vaadin.ui.VerticalLayout;
  */
 public class WorkAreaPanel extends VerticalLayout {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1;
 
 	private VerticalLayout workPanel;
 
-	/**
-	 * @throws IOException
-	 * 
-	 */
 	public final void build() throws IOException {
 
 		// Main layout for the work area
@@ -43,10 +36,6 @@ public class WorkAreaPanel extends VerticalLayout {
 
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	private Component buildWorkAreaLayout() {
 		workPanel = new VerticalLayout();
 		workPanel.setSpacing(true);

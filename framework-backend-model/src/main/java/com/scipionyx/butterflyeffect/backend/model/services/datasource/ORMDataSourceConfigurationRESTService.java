@@ -30,13 +30,6 @@ public class ORMDataSourceConfigurationRESTService extends AbstractConfiguration
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ORMDataSourceConfigurationRESTService.class);
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @return
-	 * 
-	 */
 	@RequestMapping(value = "/verify", method = RequestMethod.POST)
 	public ResponseEntity<String> verify(@RequestBody(required = true) ORMDataSource dataSource) {
 		LOGGER.debug("doVerify executed, dataSource:{}", dataSource);
@@ -47,13 +40,6 @@ public class ORMDataSourceConfigurationRESTService extends AbstractConfiguration
 		}
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @return
-	 * 
-	 */
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public ResponseEntity<ORMDataSource> doWrite(@RequestBody(required = true) ORMDataSource dataSource) {
 		LOGGER.debug("doWrite executed, dataSource:{}", dataSource);
@@ -64,12 +50,6 @@ public class ORMDataSourceConfigurationRESTService extends AbstractConfiguration
 		}
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @return
-	 */
 	@RequestMapping(value = "/read/all", method = { RequestMethod.POST, RequestMethod.GET })
 	public ResponseEntity<List<ORMDataSource>> readAll() {
 

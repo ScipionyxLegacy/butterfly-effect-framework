@@ -15,11 +15,15 @@ import com.vaadin.ui.Slider;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
+/**
+ * 
+ * 
+ * 
+ * @author Renato Mendes - renato.mendes.1123@gmail.com
+ *
+ */
 public abstract class ScipionyxPanel extends CssLayout {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private final HorizontalLayout caption = new HorizontalLayout();
@@ -30,10 +34,6 @@ public abstract class ScipionyxPanel extends CssLayout {
 
 	public abstract void doBuild() throws Exception;
 
-	/**
-	 * @throws Exception 
-	 * 
-	 */
 	public ScipionyxPanel build() throws Exception {
 
 		setSizeFull();
@@ -79,27 +79,14 @@ public abstract class ScipionyxPanel extends CssLayout {
 		this.captionText.setValue(caption);
 	}
 
-	/**
-	 * 
-	 * @param component
-	 */
 	public void addBodyComponent(Component component) {
 		this.content.addComponent(component);
 	}
 
-	/**
-	 * 
-	 * @param component
-	 */
 	public void clearBodyComponents() {
 		this.content.removeAllComponents();
 	}
 
-	/**
-	 * 
-	 * @param icon
-	 * @param button
-	 */
 	public void addButton(VaadinIcons icon, Button button) {
 		buttonLayout.addComponentAsFirst(button);
 		button.setIcon(icon);
@@ -107,26 +94,16 @@ public abstract class ScipionyxPanel extends CssLayout {
 		button.addStyleName(ValoTheme.BUTTON_ICON_ONLY);
 	}
 
-	/**
-	 * 
-	 * @param icon
-	 * @param button
-	 */
 	public void addMenuBar(MenuBar menuBar) {
 		buttonLayout.addComponentAsFirst(menuBar);
-		
+
 		menuBar.getItems().forEach(i -> i.setCheckable(true));
-		
+
 		menuBar.setStyleName(ValoTheme.MENUBAR_SMALL);
 		menuBar.addStyleName(ValoTheme.MENUBAR_BORDERLESS);
-		
+
 	}
 
-	/**
-	 * 
-	 * @param icon
-	 * @param slider
-	 */
 	public void addSlider(VaadinIcons icon, Slider slider, ValueChangeListener<Double> changeListener) {
 		buttonLayout.addComponentAsFirst(slider);
 		if (icon != null) {

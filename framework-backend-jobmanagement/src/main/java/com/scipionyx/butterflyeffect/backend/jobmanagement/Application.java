@@ -30,8 +30,10 @@ public class Application extends AsyncConfigurerSupport {
 	 * modules might utilize it.
 	 * 
 	 * @param connectionFactory
+	 *            connection factory
 	 * @param configurer
-	 * @return
+	 *            configurer
+	 * @return returns JmsListenerContainerFactory
 	 */
 	@Bean
 	public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
@@ -54,7 +56,7 @@ public class Application extends AsyncConfigurerSupport {
 	 * 
 	 * Serialize message content to json using TextMessage
 	 * 
-	 * @return
+	 * @return message converter
 	 */
 	@Bean
 	public MessageConverter messageConverter() {

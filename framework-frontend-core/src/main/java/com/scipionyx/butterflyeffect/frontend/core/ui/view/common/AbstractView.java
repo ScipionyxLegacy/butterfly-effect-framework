@@ -54,18 +54,11 @@ public abstract class AbstractView extends VerticalLayout implements View, Butte
 
 	protected String username;
 
-	/**
-	 * 
-	 */
 	@Override
 	public final void enter(ViewChangeEvent event) {
 		doEnter(event);
 	}
 
-	/**
-	 * 
-	 * @throws Exception
-	 */
 	@PostConstruct
 	private void init() throws Exception {
 
@@ -105,11 +98,6 @@ public abstract class AbstractView extends VerticalLayout implements View, Butte
 
 	}
 
-	/**
-	 * 
-	 * @return
-	 * @throws IOException
-	 */
 	private ViewConfiguration read() throws IOException {
 
 		// Get the name of the configuration File.
@@ -127,9 +115,12 @@ public abstract class AbstractView extends VerticalLayout implements View, Butte
 	 * a jar, most likely it can not find the files within jars.
 	 * 
 	 * @param name
+	 *            resource name
 	 * @param classLoader
-	 * @return
+	 *            classloader
+	 * @return list of files as inputstream
 	 * @throws IOException
+	 *             if any error
 	 */
 	protected List<InputStream> loadResources(final String name, final ClassLoader classLoader) throws IOException {
 		final List<InputStream> list = new ArrayList<InputStream>();
@@ -141,10 +132,6 @@ public abstract class AbstractView extends VerticalLayout implements View, Butte
 		return list;
 	}
 
-	/**
-	 * @param viewConfigurationInformation
-	 * 
-	 */
 	private void buildTitleLayout(ViewConfiguration viewConfigurationInformation) {
 
 		//
@@ -166,11 +153,6 @@ public abstract class AbstractView extends VerticalLayout implements View, Butte
 
 	}
 
-	/**
-	 * 
-	 * @param buttonFriendly
-	 * @param component
-	 */
 	protected Component addButton(String theme, Component component) {
 		component.setStyleName(theme);
 		buttonPanel.addComponent(component);

@@ -21,6 +21,8 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.RESTServ
 
 /**
  * 
+ * 
+ * 
  * @author Renato Mendes
  *
  */
@@ -51,10 +53,6 @@ public abstract class AbstractRESTClientService<ENTITY> implements IService<ENTI
 	protected Class<ENTITY> clazz;
 	protected Class<ENTITY[]> arrayClazz;
 
-	/**
-	 * @throws Exception
-	 * 
-	 */
 	@SuppressWarnings("unchecked")
 	@PostConstruct
 	private final void init() throws Exception {
@@ -78,12 +76,11 @@ public abstract class AbstractRESTClientService<ENTITY> implements IService<ENTI
 	}
 
 	/**
+	 * TODO - Add Cache for this function
 	 * 
-	 * TODO - Cache ?
-	 * 
-	 * @param url
-	 * @return
-	 * @throws Exception
+	 * @param function url to be transformed
+	 * @return return the URL
+	 * @throws Exception if the URL can not be calculated
 	 */
 	protected URI calculateURI(final String function) throws Exception {
 
@@ -109,8 +106,6 @@ public abstract class AbstractRESTClientService<ENTITY> implements IService<ENTI
 	}
 
 	/**
-	 * @throws Exception
-	 * @throws RestClientException
 	 * 
 	 */
 	@Override

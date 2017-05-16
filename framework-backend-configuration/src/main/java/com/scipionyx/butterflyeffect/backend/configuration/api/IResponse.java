@@ -13,20 +13,12 @@ public interface IResponse<T> extends Serializable {
 	/**
 	 * The system was able to verify the correctness of the process
 	 * 
-	 * @return
+	 * @return true if is verified
 	 */
 	public boolean isVerified();
 
-	/**
-	 * 
-	 * @return
-	 */
 	public T getResponse();
 
-	/**
-	 * 
-	 * @return
-	 */
 	public Exception getException();
 
 }

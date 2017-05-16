@@ -19,11 +19,6 @@ public class TopMenuRight extends MenuBar {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @param menu
-	 * @param userMenuService
-	 * 
-	 */
 	public void build(Menu menu, List<Menu> list) {
 		this.addStyleName(ValoTheme.MENUBAR_BORDERLESS);
 		@SuppressWarnings("unused")
@@ -31,12 +26,6 @@ public class TopMenuRight extends MenuBar {
 		// addChildren(root, menu, list);
 	}
 
-	/**
-	 * 
-	 * @param menu
-	 * @param list
-	 * @return
-	 */
 	private MenuItem addRoot(Menu menu, List<Menu> list) {
 
 		Command command = null;
@@ -73,10 +62,6 @@ public class TopMenuRight extends MenuBar {
 
 	}
 
-	/**
-	 * @param root
-	 * 
-	 */
 	private void addChildren(MenuItem root, Menu menu, List<Menu> list) {
 
 		Command command = new Command() {
@@ -107,12 +92,6 @@ public class TopMenuRight extends MenuBar {
 
 	}
 
-	/**
-	 * 
-	 * @param list
-	 * @param menu
-	 * @return
-	 */
 	private boolean hasChildren(Menu menu, List<Menu> list) {
 		for (Menu menu2 : list) {
 			if (menu.getId().equals(menu2.getParent())) {

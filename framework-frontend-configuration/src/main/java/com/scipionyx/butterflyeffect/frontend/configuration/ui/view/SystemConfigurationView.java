@@ -40,18 +40,10 @@ public class SystemConfigurationView extends AbstractView {
 
 	public static final String VIEW_NAME = "butterfly-effect-frontend-configuration:config";
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	// @Autowired
 	private SystemConfiguration systemConfiguration;
 
-	/**
-	 * @throws Exception
-	 * 
-	 */
 	public void doBuildWorkArea(VerticalLayout workPanel) throws Exception {
 
 		// systemConfiguration = systemConfigurationService.readAll().get(0);

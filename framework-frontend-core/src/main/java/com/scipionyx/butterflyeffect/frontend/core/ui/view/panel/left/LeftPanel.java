@@ -19,9 +19,6 @@ import com.vaadin.ui.themes.ValoTheme;
  */
 public class LeftPanel extends VerticalLayout {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private VerticalLayout internal;
@@ -34,9 +31,6 @@ public class LeftPanel extends VerticalLayout {
 
 	final static int MARGIN = 20;
 
-	/**
-	 * 
-	 */
 	public void build(ViewConfigurationInformation information) {
 
 		this.setSizeFull();
@@ -98,10 +92,6 @@ public class LeftPanel extends VerticalLayout {
 
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	public VerticalLayout getInternal() {
 		return internal;
 	}

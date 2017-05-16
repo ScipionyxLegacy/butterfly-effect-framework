@@ -20,7 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.GenericTypeResolver;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.fasterxml.jackson.databind.JsonMappingException;
 import com.scipionyx.butterflyeffect.backend.configuration.api.IReadService;
@@ -41,6 +40,7 @@ import com.scipionyx.butterflyeffect.configuration.model.SystemConfiguration;
  * 
  * @author Renato Mendes
  * @param <T>
+ *            class for the service
  */
 public abstract class AbstractConfigurationService<T extends IConfiguration>
 		implements IWriteService<T>, IVerifyService<T>, IReadService<T> {
@@ -68,8 +68,7 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 	/**
 	 * Calculate the folder for any entity
 	 * 
-	 * @param t
-	 * @return
+	 * @return the calculated folder as string
 	 * @throws IOException
 	 */
 	private String calculateEntityFolderName() throws IOException {
@@ -86,19 +85,13 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 
 	/**
 	 * 
-	 * @return
+	 * @return calculated folder as File
 	 * @throws IOException
 	 */
 	private File calculateEntityFolder() throws IOException {
 		return new File(calculateEntityFolderName());
 	}
 
-	/**
-	 * 
-	 * @param t
-	 * @return
-	 * @throws IOException
-	 */
 	private File createFile(T t) throws IOException {
 		String folderName = calculateEntityFolderName();
 		String fileName = folderName + t.getId() + ".json";
@@ -109,13 +102,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 		return json;
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @throws IOException
-	 * 
-	 */
 	public final IResponse<List<T>> readAll() throws IOException {
 		LOGGER.debug("READ ALL function executed for the class: {}", genericType.getName());
 		List<T> list = new ArrayList<>();
@@ -136,11 +122,18 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 	 * Create a new Entity
 	 * 
 	 * @param t
-	 * @param file
-	 * @return
+	 *            entity
+	 * @param backup
+	 *            true for creating backup
+	 * @param salt
+	 *            salt value
+	 * @return response
 	 * @throws IOException
+	 *             if an error
 	 * @throws IllegalAccessException
+	 *             if an error
 	 * @throws IllegalArgumentException
+	 *             if an error
 	 */
 	@Override
 	public final IResponse<String> put(T t, boolean backup, String salt)
@@ -195,16 +188,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @param t
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 */
 	private final void encrypt(Object t, String salt, Class<?> type, boolean encrypt_)
 			throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
@@ -278,32 +261,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 		}
 	}
 
-	/**
-	 * 
-	 * @param salt
-	 * @return
-	 */
-	// private BasicTextEncryptor createBasicTextEncrptor(String salt) {
-	//
-	// String password = (systemConfiguration.getEncryptionPhrase() != null)
-	// ? systemConfiguration.getEncryptionPhrase() : "secret";
-	//
-	// if (salt != null)
-	// password = password + salt;
-	//
-	// BasicTextEncryptor encryptor = new BasicTextEncryptor();
-	// encryptor.setPassword(password);
-	//
-	// return encryptor;
-	// }
-
-	/**
-	 * 
-	 * @param t
-	 * @param file
-	 * @return
-	 * @throws IOException
-	 */
 	private void backup(T t) throws IOException {
 		if (t.getFile() != null && t.getFile().exists()) {
 			// FileUtils.copyFile(tobackup, new File(backupfolder +
@@ -313,18 +270,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 		}
 	}
 
-	/**
-	 * 
-	 * @param file
-	 * @return
-	 * @throws IOException
-	 * @throws JsonMappingException
-	 * @throws JsonParseException
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 */
 	public final IResponse<T> read(String id, final String salt) throws JsonParseException, IOException,
 			IllegalArgumentException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		LOGGER.debug("READ function executed for the class: {}", genericType.getName());
@@ -336,18 +281,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 
 	}
 
-	/**
-	 * 
-	 * @param file
-	 * @return
-	 * @throws IOException
-	 * @throws JsonMappingException
-	 * @throws JsonParseException
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 */
 	public final IResponse<T> read(File file, final String salt) throws JsonParseException, IOException,
 			IllegalArgumentException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		LOGGER.debug("READ function executed for the class: {}", genericType.getName());
@@ -360,14 +293,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 		return null;// response;
 	}
 
-	/**
-	 * 
-	 * @param t
-	 * @param b
-	 * @param object
-	 * @return
-	 * @throws IOException
-	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public final IResponse<T> delete(T t, boolean b) throws IOException {
 		LOGGER.debug("DELETE function executed for the class: {}", genericType.getName());
@@ -387,19 +312,6 @@ public abstract class AbstractConfigurationService<T extends IConfiguration>
 		return new Response(t);
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @param id
-	 * @param salt
-	 * @return
-	 * @throws IOException
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 */
 	public IResponse<T> read(final T t, final String salt) throws IOException, IllegalArgumentException,
 			IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		// find the file

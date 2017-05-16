@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  * 
- * @author rmendes
+ * @author Renato Mendes
  *
- * @param <T>
+ * @param <T> Service Entity
  */
 public interface IReadService<T> {
 

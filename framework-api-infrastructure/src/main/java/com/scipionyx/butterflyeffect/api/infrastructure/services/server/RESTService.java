@@ -19,7 +19,7 @@ public @interface RESTService {
 	/**
 	 * API Version
 	 * 
-	 * @return
+	 * @return returns the version this service
 	 */
 	String version() default "v1";
 

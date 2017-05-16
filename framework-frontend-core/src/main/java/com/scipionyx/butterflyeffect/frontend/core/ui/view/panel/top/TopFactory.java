@@ -22,18 +22,11 @@ import com.vaadin.ui.Component;
 @UIScope
 public class TopFactory implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
 	private MenuService userMenuService;
 
-	/**
-	 * 
-	 * @return
-	 */
 	public Component instance() {
 		TopMenuPanel topMenuPanel = new TopMenuPanel();
 		topMenuPanel.build(userMenuService);

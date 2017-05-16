@@ -27,30 +27,18 @@ public class Response<T> implements IResponse<T> {
 		this.verified = true;
 	}
 
-	/**
-	 * 
-	 * @param exception
-	 */
 	public Response(Exception exception) {
 		super();
 		this.verified = false;
 		this.exception = exception;
 	}
 
-	/**
-	 * 
-	 * @param exception
-	 */
 	public Response(T t) {
 		super();
 		this.verified = true;
 		this.response = t;
 	}
 
-	/**
-	 * 
-	 * @param exception
-	 */
 	public Response(T t, Exception exception) {
 		super();
 		this.verified = false;

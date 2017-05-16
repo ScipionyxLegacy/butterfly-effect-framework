@@ -17,6 +17,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 
+ * 
+ * 
  * @author Renato Mendes
  *
  */
@@ -28,12 +30,6 @@ public abstract class AbstractConfigurationMenuService<T> {
 
 	private List<T> configurations;
 
-	/**
-	 * @throws IOException
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
-	 * 
-	 */
 	@PostConstruct
 	public final void init() throws IOException, InstantiationException, IllegalAccessException {
 
@@ -51,6 +47,7 @@ public abstract class AbstractConfigurationMenuService<T> {
 	 * This function will read the main menu configuration for all services.
 	 * 
 	 * @throws IOException
+	 *             is nay error
 	 */
 	protected void readConfigurations() throws IOException {
 		//
@@ -72,9 +69,12 @@ public abstract class AbstractConfigurationMenuService<T> {
 	 * a jar, most likely it can not find the files within jars.
 	 * 
 	 * @param name
+	 *            name of the resource
 	 * @param classLoader
-	 * @return
+	 *            classload for it
+	 * @return list of files
 	 * @throws IOException
+	 *             if any error
 	 */
 	protected final List<InputStream> loadResources(final String name, final ClassLoader classLoader)
 			throws IOException {

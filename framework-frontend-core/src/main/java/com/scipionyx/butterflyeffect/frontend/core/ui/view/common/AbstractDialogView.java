@@ -32,10 +32,6 @@ public abstract class AbstractDialogView extends VerticalLayout implements View 
 
 	protected boolean built;
 
-	/**
-	 * 
-	 * @throws Exception
-	 */
 	public void build() throws Exception {
 
 		if (built) {

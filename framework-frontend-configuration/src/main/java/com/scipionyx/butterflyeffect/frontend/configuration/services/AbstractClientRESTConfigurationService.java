@@ -35,9 +35,6 @@ public abstract class AbstractClientRESTConfigurationService<T extends IConfigur
 	@SuppressWarnings("rawtypes")
 	public abstract Class getArrayClass();
 
-	/**
-	 * 
-	 */
 	@SuppressWarnings("unchecked")
 	public AbstractClientRESTConfigurationService() {
 		super();
@@ -51,11 +48,6 @@ public abstract class AbstractClientRESTConfigurationService<T extends IConfigur
 		return null;
 	}
 
-	/**
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
 	public List<T> getAll() throws Exception {
 
 		final String uri = calculateBaseURL() + getRequestMapping() + "/getAll/";
@@ -76,12 +68,6 @@ public abstract class AbstractClientRESTConfigurationService<T extends IConfigur
 		return response;
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @return
-	 */
 	public final T read(T t, String salt) {
 		final String uri = calculateBaseURL() + getRequestMapping() + "read/{id}/{salt}";
 		Map<String, String> uriVariables = new HashMap<>();
@@ -91,12 +77,6 @@ public abstract class AbstractClientRESTConfigurationService<T extends IConfigur
 		return body;
 	}
 
-	/**
-	 * 
-	 * 
-	 * 
-	 * @return
-	 */
 	public final T put(T t) {
 		final String uri = calculateBaseURL() + normalizeRequestMapping() + "put/";
 		restTemplate.put(uri, t);
@@ -106,7 +86,7 @@ public abstract class AbstractClientRESTConfigurationService<T extends IConfigur
 	/**
 	 * it should end with "/"
 	 * 
-	 * @return
+	 * @return the normalized request mapping
 	 */
 	private final String normalizeRequestMapping() {
 		// Verify
@@ -120,23 +100,11 @@ public abstract class AbstractClientRESTConfigurationService<T extends IConfigur
 		return requestMapping;
 	}
 
-	/**
-	 * 
-	 * @param url
-	 * @param t
-	 * @return
-	 */
 	public final void delete(T t) {
 		final String uri = calculateBaseURL() + normalizeRequestMapping() + t.getId();
 		restTemplate.delete(uri);
 	}
 
-	/**
-	 * 
-	 * @param url
-	 * @param t
-	 * @return
-	 */
 	public final void deleteAll(T t) {
 		final String uri = calculateBaseURL() + normalizeRequestMapping() + "all";
 		restTemplate.delete(uri);

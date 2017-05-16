@@ -9,6 +9,7 @@ import com.scipionyx.butterflyeffect.api.jobmanagement.api.model.Job;
 
 /**
  * 
+ * 
  * @author Renato Mendes
  *
  */
@@ -17,8 +18,7 @@ public class WorkerFactory {
 
 	/**
 	 * 
-	 * @param user
-	 * @return
+	 * @return Job
 	 * @throws InterruptedException
 	 */
 	public Future<Job> next() throws InterruptedException {

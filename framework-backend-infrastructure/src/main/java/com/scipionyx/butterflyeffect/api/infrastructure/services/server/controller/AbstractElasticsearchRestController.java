@@ -47,9 +47,9 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IReposit
  * @author Renato Mendes
  *
  * @param <T>
- *            Service
- * @param <E>
- *            Entity
+ *            Service services class
+ * @param <ENTITY>
+ *            Entity entity class
  */
 public abstract class AbstractElasticsearchRestController<T extends IRepositoryService<ENTITY>, ENTITY>
 		extends AbstractRestController<IRepositoryService<ENTITY>, ENTITY> {
@@ -83,13 +83,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/findAll", method = { RequestMethod.GET, RequestMethod.POST })
 	public final ResponseEntity<Iterable<ENTITY>> findAll() throws RestClientException, Exception {
 
@@ -119,13 +112,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 
 	}
 
-	/**
-	 * TODO - not sure if the sort is working
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/findAllOrderBy", method = { RequestMethod.GET })
 	public final ResponseEntity<List<ENTITY>> findAllOrderBy(String orderBy) throws RestClientException, Exception {
 
@@ -156,13 +142,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/findAllByOrderBy", method = { RequestMethod.PUT })
 	public final ResponseEntity<List<ENTITY>> findAllByOrderBy(
 			@RequestBody(required = true) Map<String, Object> parameters, HttpServletRequest request)
@@ -241,13 +220,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return
-	 * @throws Exception
-	 * @throws RestClientException
-	 */
 	@RequestMapping(path = "/save", method = { RequestMethod.PUT })
 	public final ResponseEntity<ENTITY> save(@RequestBody(required = true) ENTITY entity)
 			throws RestClientException, Exception {
@@ -264,13 +236,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/delete", method = { RequestMethod.DELETE })
 	public final ResponseEntity<String> delete(@RequestParam(required = true) Long id)
 			throws RestClientException, Exception {
@@ -285,13 +250,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 		}
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/findOne/{id}", method = { RequestMethod.GET })
 	public final ResponseEntity<ENTITY> findOne(@PathVariable Long id) throws RestClientException, Exception {
 		LOGGER.debug("findOne, paramId=", id);
@@ -304,13 +262,6 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 		}
 	}
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 * @throws RestClientException
-	 * @throws Exception
-	 */
 	@RequestMapping(path = "/count", method = { RequestMethod.GET })
 	public final ResponseEntity<Long> count(@RequestParam(required = true) String all)
 			throws RestClientException, Exception {

@@ -9,6 +9,7 @@ import com.scipionyx.butterflyeffect.configuration.model.IConfiguration;
  * @author Renato Mendes
  *
  * @param <T>
+ *            Class for the service
  */
 public interface IWriteService<T extends IConfiguration> {
 

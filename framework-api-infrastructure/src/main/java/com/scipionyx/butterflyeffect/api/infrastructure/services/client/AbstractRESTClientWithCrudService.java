@@ -22,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author rmendes
  *
  * @param <ENTITY>
+ *            the class for the Crud Service
  */
 @NoRepositoryBean
 public abstract class AbstractRESTClientWithCrudService<ENTITY> extends AbstractRESTClientService<ENTITY>
@@ -49,8 +50,10 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 	/**
 	 * 
 	 * @param filter
-	 * @return
+	 *            defines the filter for the query
+	 * @return returns the entity or null if no entity found
 	 * @throws Exception
+	 *             if the query can not be executed
 	 */
 	public ENTITY findOne(Optional<ENTITY> filter) throws Exception {
 
@@ -69,9 +72,11 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 
 	/**
 	 * 
-	 * @param id
-	 * @return
+	 * @param map
+	 *            set of parameters to be queried upon to
+	 * @return returns the entity or null if no entity found
 	 * @throws Exception
+	 *             if the query can not be executed
 	 */
 	public ENTITY findOneBy(Map<String, Object> map) throws Exception {
 		try {
@@ -96,9 +101,13 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 
 	/**
 	 * 
-	 * @param id
-	 * @return
+	 * @param map
+	 *            set of parameters for the query
+	 * @param orderBy
+	 *            Parameter to order by
+	 * @return returns the List of entity or null if no entity found
 	 * @throws Exception
+	 *             if the query can not be executed
 	 */
 	public List<ENTITY> findAllByOrderBy(Map<String, Value> map, String orderBy) throws Exception {
 		return findAllByOrderBy(map, orderBy, true);
@@ -106,9 +115,15 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 
 	/**
 	 * 
-	 * @param id
-	 * @return
+	 * @param map
+	 *            set of parameters for the query
+	 * @param orderBy
+	 *            Parameter to order by
+	 * @param asc
+	 *            indicates if the order by is asc
+	 * @return returns the list of entity or null if no entity found
 	 * @throws Exception
+	 *             if the query can not be executed
 	 */
 	public List<ENTITY> findAllByOrderBy(Map<String, Value> map, String orderBy, boolean asc) throws Exception {
 		try {
@@ -132,8 +147,9 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 
 	/**
 	 * 
-	 * @param sortedBy
-	 * @return
+	 * @param orderBy
+	 *            Parameter to order by
+	 * @return returns the List of entity or null if no entity found
 	 */
 	public List<ENTITY> findAllOrderBy(String orderBy) {
 
@@ -225,8 +241,9 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 
 	/**
 	 * 
-	 * @param id
-	 * @return
+	 * @param parameter
+	 *            parameter
+	 * @return returns the entity or null if no entity found
 	 */
 	@Deprecated
 	public ENTITY findOneBy(CrudParameter parameter) {
@@ -241,8 +258,9 @@ public abstract class AbstractRESTClientWithCrudService<ENTITY> extends Abstract
 
 	/**
 	 * 
-	 * @param id
-	 * @return
+	 * @param parameter
+	 *            parameter
+	 * @return returns the entity or null if no entity found
 	 */
 	@Deprecated
 	public ENTITY findOneBy(List<CrudParameter> parameter) {
