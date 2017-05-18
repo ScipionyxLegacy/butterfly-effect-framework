@@ -20,7 +20,7 @@ import com.scipionyx.butterflyeffect.configuration.model.IConfiguration;
  * 
  * 
  * @author Renato Mendes
- * @param <T>
+ * 
  */
 public abstract class AbstractConfigurationRESTService<T extends IConfiguration>
 		implements IWriteRESTService<T>, IVerifyRESTService<T> {

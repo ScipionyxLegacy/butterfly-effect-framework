@@ -16,12 +16,6 @@ public class EntityFactory {
 		// classPool = new ClassPool(true);
 	}
 
-	/**
-	 * 
-	 * @return
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
-	 */
 	public Object instance(Entity entity) throws InstantiationException, IllegalAccessException {
 		return entity.getClazz().newInstance();
 	}
@@ -54,39 +48,40 @@ public class EntityFactory {
 	//
 	// }
 
-//	/**
-//	 * @param field
-//	 * @param clazz
-//	 * @throws NotFoundException
-//	 * @throws CannotCompileException
-//	 * 
-//	 */
-//	private void buildField(Field field, CtClass clazz) throws NotFoundException, CannotCompileException {
-//
-//		// Prepare Field Name using Java Standards
-//		// String fieldName = field.getName().replace(" ", "_");
-//		// fieldName = CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL,
-//		// fieldName);
-//		//
-//		// // Creating Method Name following Java standards
-//		// String methodName =
-//		// CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, fieldName);
-//		//
-//		// //
-//		// CtClass type =
-//		// classPool.getCtClass(field.getType().getClazz().getName());
-//		// CtField ctField = new CtField(type, fieldName, clazz);
-//		//
-//		// // creating getters and setters
-//		// CtMethod getterMethod = CtNewMethod.getter("get" + methodName,
-//		// ctField);
-//		// CtMethod setterMethod = CtNewMethod.setter("set" + methodName,
-//		// ctField);
-//		//
-//		// // adding fields and methods to the class.
-//		// clazz.addField(ctField);
-//		// clazz.addMethod(setterMethod);
-//		// clazz.addMethod(getterMethod);
-//	}
+	// /**
+	// * @param field
+	// * @param clazz
+	// * @throws NotFoundException
+	// * @throws CannotCompileException
+	// *
+	// */
+	// private void buildField(Field field, CtClass clazz) throws
+	// NotFoundException, CannotCompileException {
+	//
+	// // Prepare Field Name using Java Standards
+	// // String fieldName = field.getName().replace(" ", "_");
+	// // fieldName = CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL,
+	// // fieldName);
+	// //
+	// // // Creating Method Name following Java standards
+	// // String methodName =
+	// // CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, fieldName);
+	// //
+	// // //
+	// // CtClass type =
+	// // classPool.getCtClass(field.getType().getClazz().getName());
+	// // CtField ctField = new CtField(type, fieldName, clazz);
+	// //
+	// // // creating getters and setters
+	// // CtMethod getterMethod = CtNewMethod.getter("get" + methodName,
+	// // ctField);
+	// // CtMethod setterMethod = CtNewMethod.setter("set" + methodName,
+	// // ctField);
+	// //
+	// // // adding fields and methods to the class.
+	// // clazz.addField(ctField);
+	// // clazz.addMethod(setterMethod);
+	// // clazz.addMethod(getterMethod);
+	// }
 
 }
