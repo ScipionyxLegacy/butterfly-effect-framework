@@ -4,11 +4,11 @@
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
                       
   <servers>
-    <server>
-      <id>bintray-scipionyxcorp-io.scipionyx.butterflyeffect</id>
-			<username>scipionyx</username>
-      <password>${env.bintray_token}</password>
-    </server>
+	<server>
+		<id>bintray-scipionyxcorp-io.scipionyx.butterflyeffect</id>
+		<username>scipionyx</username>
+		<password>e145531bf9f8f8273685c39db9ec9661a83a052b</password>
+	</server>
   </servers>
-  
+
 </settings>
