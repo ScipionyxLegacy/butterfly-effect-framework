@@ -37,6 +37,7 @@
 		<scipionyx.frontend.port>80</scipionyx.frontend.port>
 		<scipionyx.backend.port>8888</scipionyx.backend.port>
 
+		<scipionyx.framework.version>0.1.1-SNAPSHOT</scipionyx.framework.version>
 	</properties>
 
 	<organization>
@@ -172,43 +173,49 @@
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>api-jobmanagement</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>api-infrastructure</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>api-ui</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>api-configuration</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>api-model</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.scipionyx.framework</groupId>
+				<artifactId>backend-infrastructure</artifactId>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>backend-configuration</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>frontend-core</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>frontend-configuration</artifactId>
-				<version>${project.version}</version>
+				<version>${scipionyx.framework.version}</version>
 			</dependency>
 
 			<!-- -->
