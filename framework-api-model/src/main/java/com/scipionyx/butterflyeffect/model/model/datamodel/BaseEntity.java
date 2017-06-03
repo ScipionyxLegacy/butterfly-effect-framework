@@ -21,7 +21,7 @@ public abstract class BaseEntity<TYPE extends Serializable> implements Serializa
 	@Id
 	private TYPE id;
 
-	private String entityId;
+	private String tenantId;
 
 	public TYPE getId() {
 		return id;
@@ -31,12 +31,12 @@ public abstract class BaseEntity<TYPE extends Serializable> implements Serializa
 		this.id = id;
 	}
 
-	public String getEntityId() {
-		return entityId;
+	public String getTenantId() {
+		return tenantId;
 	}
 
-	public void setEntityId(String entityId) {
-		this.entityId = entityId;
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
 	}
 
 }
