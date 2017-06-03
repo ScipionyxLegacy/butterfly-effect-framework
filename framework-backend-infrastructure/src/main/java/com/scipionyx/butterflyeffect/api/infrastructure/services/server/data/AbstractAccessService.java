@@ -1,5 +1,7 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.server.data;
 
+import java.io.Serializable;
+
 import org.springframework.web.client.RestClientException;
 
 import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IRepositoryService;
@@ -16,7 +18,8 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IReposit
  * @param <REPOSITORY>
  *            class for the repository
  */
-public abstract class AbstractAccessService<ENTITY, REPOSITORY> implements IRepositoryService<ENTITY> {
+public abstract class AbstractAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE extends Serializable>
+		implements IRepositoryService<ENTITY, ENTITY_ID_TYPE> {
 
 	private static final long serialVersionUID = 1L;
 

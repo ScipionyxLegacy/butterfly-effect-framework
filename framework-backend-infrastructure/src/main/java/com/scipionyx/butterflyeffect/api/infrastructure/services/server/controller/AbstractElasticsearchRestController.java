@@ -1,6 +1,7 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.server.controller;
 
 import java.beans.PropertyDescriptor;
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -41,18 +42,19 @@ import org.springframework.web.client.RestClientException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.scipionyx.butterflyeffect.api.infrastructure.services.client.Value;
 import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IRepositoryService;
+import com.scipionyx.butterflyeffect.model.model.datamodel.BaseEntity;
 
 /**
  * 
  * @author Renato Mendes
  *
- * @param <T>
+ * @param <REPOSITORY>
  *            Service services class
  * @param <ENTITY>
  *            Entity entity class
  */
-public abstract class AbstractElasticsearchRestController<T extends IRepositoryService<ENTITY>, ENTITY>
-		extends AbstractRestController<IRepositoryService<ENTITY>, ENTITY> {
+public abstract class AbstractElasticsearchRestController<REPOSITORY extends IRepositoryService<ENTITY, ENTITY_ID_TYPE>, ENTITY extends BaseEntity<ENTITY_ID_TYPE>, ENTITY_ID_TYPE extends Serializable>
+		extends AbstractRestController<ENTITY, ENTITY_ID_TYPE, IRepositoryService<ENTITY, ENTITY_ID_TYPE>> {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractElasticsearchRestController.class);
 
@@ -224,7 +226,7 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 	public final ResponseEntity<ENTITY> save(@RequestBody(required = true) ENTITY entity)
 			throws RestClientException, Exception {
 		LOGGER.debug("save");
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		ENTITY persisted;
 		try {
 			persisted = repository.save(entity);
@@ -237,10 +239,10 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 	}
 
 	@RequestMapping(path = "/delete", method = { RequestMethod.DELETE })
-	public final ResponseEntity<String> delete(@RequestParam(required = true) Long id)
+	public final ResponseEntity<String> delete(@RequestParam(required = true) ENTITY_ID_TYPE id)
 			throws RestClientException, Exception {
 		LOGGER.debug("delete, paramId=", id);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			repository.delete(id);
 			return (new ResponseEntity<>("Ok", HttpStatus.OK));
@@ -251,9 +253,9 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 	}
 
 	@RequestMapping(path = "/findOne/{id}", method = { RequestMethod.GET })
-	public final ResponseEntity<ENTITY> findOne(@PathVariable Long id) throws RestClientException, Exception {
+	public final ResponseEntity<ENTITY> findOne(@PathVariable ENTITY_ID_TYPE id) throws RestClientException, Exception {
 		LOGGER.debug("findOne, paramId=", id);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			return (new ResponseEntity<>(repository.findOne(id), HttpStatus.OK));
 		} catch (Exception e) {
@@ -266,7 +268,7 @@ public abstract class AbstractElasticsearchRestController<T extends IRepositoryS
 	public final ResponseEntity<Long> count(@RequestParam(required = true) String all)
 			throws RestClientException, Exception {
 		LOGGER.debug("count, all=", all);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			return (new ResponseEntity<>(repository.count(), HttpStatus.OK));
 		} catch (Exception e) {

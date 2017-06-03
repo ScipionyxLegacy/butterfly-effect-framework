@@ -1,5 +1,6 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.client;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.ParameterizedType;
 import java.net.URI;
@@ -26,7 +27,8 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.RESTServ
  * @author Renato Mendes
  *
  */
-public abstract class AbstractRESTClientService<ENTITY> implements IService<ENTITY> {
+public abstract class AbstractRESTClientService<ENTITY, ENTITY_ID_TYPE extends Serializable>
+		implements IService<ENTITY, ENTITY_ID_TYPE> {
 
 	/**
 	 * 
@@ -78,9 +80,11 @@ public abstract class AbstractRESTClientService<ENTITY> implements IService<ENTI
 	/**
 	 * TODO - Add Cache for this function
 	 * 
-	 * @param function url to be transformed
+	 * @param function
+	 *            url to be transformed
 	 * @return return the URL
-	 * @throws Exception if the URL can not be calculated
+	 * @throws Exception
+	 *             if the URL can not be calculated
 	 */
 	protected URI calculateURI(final String function) throws Exception {
 

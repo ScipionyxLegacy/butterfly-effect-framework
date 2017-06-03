@@ -1,5 +1,7 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.server.controller;
 
+import java.io.Serializable;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +22,12 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IReposit
  * @param <ENTITY>
  *            Entity entity class
  */
-public abstract class AbstractRestController<T extends IRepositoryService<ENTITY>, ENTITY> {
+public abstract class AbstractRestController<ENTITY, ENTITY_ID_TYPE extends Serializable, REPOSITORY extends IRepositoryService<ENTITY, ENTITY_ID_TYPE>> {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractRestController.class);
 
 	@Autowired
-	protected transient T service;
+	protected transient REPOSITORY service;
 
 	@RequestMapping(path = "/ping", method = { RequestMethod.GET, RequestMethod.POST })
 	public final ResponseEntity<String> ping() throws RestClientException, Exception {

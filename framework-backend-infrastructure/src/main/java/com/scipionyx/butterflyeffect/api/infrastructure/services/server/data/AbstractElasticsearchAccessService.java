@@ -1,5 +1,7 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.server.data;
 
+import java.io.Serializable;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.web.client.RestClientException;
@@ -16,9 +18,10 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IService
  *
  * @param <ENTITY>
  * @param <REPOSITORY>
+ * @param <IDTYPE>
  */
-public abstract class AbstractElasticsearchAccessService<ENTITY, REPOSITORY>
-		implements IService<ENTITY>, IRepositoryService<ENTITY> {
+public abstract class AbstractElasticsearchAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE extends Serializable>
+		implements IService<ENTITY, ENTITY_ID_TYPE>, IRepositoryService<ENTITY, ENTITY_ID_TYPE> {
 
 	/**
 	 * 
@@ -26,7 +29,7 @@ public abstract class AbstractElasticsearchAccessService<ENTITY, REPOSITORY>
 	private static final long serialVersionUID = 1L;
 
 	@Autowired(required = true)
-	private ElasticsearchRepository<ENTITY, Long> repository;
+	private ElasticsearchRepository<ENTITY, ENTITY_ID_TYPE> repository;
 
 	/**
 	 * 
@@ -47,7 +50,7 @@ public abstract class AbstractElasticsearchAccessService<ENTITY, REPOSITORY>
 	/**
 	 * 
 	 */
-	public ElasticsearchRepository<ENTITY, Long> getRepository() {
+	public ElasticsearchRepository<ENTITY, ENTITY_ID_TYPE> getRepository() {
 		return repository;
 	}
 

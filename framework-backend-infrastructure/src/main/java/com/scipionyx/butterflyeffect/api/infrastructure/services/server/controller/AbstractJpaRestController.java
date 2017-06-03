@@ -1,5 +1,6 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.server.controller;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -38,13 +39,13 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IService
  * 
  * @author Renato Mendes
  *
- * @param <T>
+ * @param <SERVICE>
  *            Service service class
  * @param <ENTITY>
  *            Entity entity Class
  */
-public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTITY>
-		extends AbstractRestController<IRepositoryService<ENTITY>, ENTITY> {
+public abstract class AbstractJpaRestController<SERVICE extends IService<ENTITY, ENTITY_ID_TYPE>, ENTITY, ENTITY_ID_TYPE extends Serializable>
+		extends AbstractRestController<ENTITY, ENTITY_ID_TYPE, IRepositoryService<ENTITY, ENTITY_ID_TYPE>> {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractJpaRestController.class);
 
@@ -70,7 +71,7 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	@RequestMapping(path = "/findAll", method = { RequestMethod.GET, RequestMethod.POST })
 	public final ResponseEntity<Iterable<? extends ENTITY>> findAll() throws RestClientException, Exception {
 		LOGGER.debug("findAll");
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		return (new ResponseEntity<>(repository.findAll(), HttpStatus.OK));
 	}
 
@@ -153,7 +154,7 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	public final ResponseEntity<ENTITY> save(@RequestBody(required = true) ENTITY entity)
 			throws RestClientException, Exception {
 		LOGGER.debug("save");
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		ENTITY persisted;
 		try {
 			persisted = repository.save(entity);
@@ -166,10 +167,10 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	}
 
 	@RequestMapping(path = "/deleteById", method = { RequestMethod.DELETE })
-	public final ResponseEntity<String> delete(@RequestParam(required = true) Long id)
+	public final ResponseEntity<String> delete(@RequestParam(required = true) ENTITY_ID_TYPE id)
 			throws RestClientException, Exception {
 		LOGGER.debug("delete, paramId=", id);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			repository.delete(id);
 			return (new ResponseEntity<>("Ok", HttpStatus.OK));
@@ -183,7 +184,7 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	public final ResponseEntity<String> delete(@RequestBody(required = true) ENTITY entity)
 			throws RestClientException, Exception {
 		LOGGER.debug("delete, entity=", entity);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			repository.delete(entity);
 			return (new ResponseEntity<>("Ok", HttpStatus.OK));
@@ -197,7 +198,7 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	public final ResponseEntity<String> delete(@RequestBody Iterable<ENTITY> entities)
 			throws RestClientException, Exception {
 		LOGGER.debug("delete, paramId=");
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			repository.delete(entities);
 			return new ResponseEntity<>("Ok", HttpStatus.OK);
@@ -211,7 +212,7 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	public final ResponseEntity<Long> count(@RequestParam(required = true) String all)
 			throws RestClientException, Exception {
 		LOGGER.debug("count, all=", all);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			return (new ResponseEntity<>(repository.count(), HttpStatus.OK));
 		} catch (Exception e) {
@@ -221,9 +222,9 @@ public abstract class AbstractJpaRestController<T extends IService<ENTITY>, ENTI
 	}
 
 	@RequestMapping(path = "/findOne/{id}", method = { RequestMethod.GET })
-	public final ResponseEntity<ENTITY> findOne(@PathVariable Long id) throws RestClientException, Exception {
+	public final ResponseEntity<ENTITY> findOne(@PathVariable ENTITY_ID_TYPE id) throws RestClientException, Exception {
 		LOGGER.debug("findOne, paramId=", id);
-		CrudRepository<ENTITY, Long> repository = service.getRepository();
+		CrudRepository<ENTITY, ENTITY_ID_TYPE> repository = service.getRepository();
 		try {
 			return (new ResponseEntity<>(repository.findOne(id), HttpStatus.OK));
 		} catch (Exception e) {

@@ -1,5 +1,7 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.server.data;
 
+import java.io.Serializable;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.client.RestClientException;
@@ -14,7 +16,8 @@ import org.springframework.web.client.RestClientException;
  * @param <ENTITY>
  * @param <REPOSITORY>
  */
-public abstract class AbstractJpaAccessService<ENTITY, REPOSITORY> extends AbstractAccessService<ENTITY, REPOSITORY> {
+public abstract class AbstractJpaAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE extends Serializable>
+		extends AbstractAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE> {
 
 	/**
 	 * 
@@ -22,7 +25,7 @@ public abstract class AbstractJpaAccessService<ENTITY, REPOSITORY> extends Abstr
 	private static final long serialVersionUID = 1L;
 
 	@Autowired(required = true)
-	private CrudRepository<ENTITY, Long> repository;
+	private CrudRepository<ENTITY, ENTITY_ID_TYPE> repository;
 
 	/**
 	 * 
@@ -35,7 +38,7 @@ public abstract class AbstractJpaAccessService<ENTITY, REPOSITORY> extends Abstr
 	/**
 	 * 
 	 */
-	public CrudRepository<ENTITY, Long> getRepository() {
+	public CrudRepository<ENTITY, ENTITY_ID_TYPE> getRepository() {
 		return repository;
 	}
 

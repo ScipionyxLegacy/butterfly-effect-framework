@@ -1,5 +1,6 @@
 package com.scipionyx.butterflyeffect.api.infrastructure.services.client;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -25,8 +26,8 @@ import org.springframework.web.util.UriComponentsBuilder;
  *            the class for the Crud Service
  */
 @NoRepositoryBean
-public abstract class AbstractRESTClientWithCrudService<ENTITY> extends AbstractRESTClientService<ENTITY>
-		implements CrudRepository<ENTITY, Long> {
+public abstract class AbstractRESTClientWithCrudService<ENTITY, ENTITY_ID_TYPE extends Serializable>
+		extends AbstractRESTClientService<ENTITY, ENTITY_ID_TYPE> implements CrudRepository<ENTITY, Long> {
 
 	/**
 	 * 
