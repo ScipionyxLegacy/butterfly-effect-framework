@@ -14,7 +14,11 @@ import org.springframework.web.client.RestClientException;
  * @author Renato Mendes
  *
  * @param <ENTITY>
+ *            Business entity target by the Service
  * @param <REPOSITORY>
+ *            Spring Data service
+ * @param <ENTITY_ID_TYPE>
+ *            Class for the Business entity id field
  */
 public abstract class AbstractJpaAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE extends Serializable>
 		extends AbstractAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE> {

@@ -214,9 +214,25 @@
 			</dependency>
 			<dependency>
 				<groupId>io.scipionyx.framework</groupId>
+				<artifactId>frontend-security</artifactId>
+				<version>${scipionyx.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.scipionyx.framework</groupId>
 				<artifactId>frontend-configuration</artifactId>
 				<version>${scipionyx.framework.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>io.scipionyx.framework</groupId>
+				<artifactId>frontend-sessionmanagement</artifactId>
+				<version>${scipionyx.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.scipionyx.framework</groupId>
+				<artifactId>frontend-jobmanager</artifactId>
+				<version>${scipionyx.framework.version}</version>
+			</dependency>
+
 
 			<!-- -->
 			<dependency>

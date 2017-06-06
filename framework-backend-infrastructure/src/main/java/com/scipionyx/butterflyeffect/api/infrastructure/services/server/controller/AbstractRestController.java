@@ -17,10 +17,12 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IReposit
  * 
  * @author Renato Mendes
  *
- * @param <T>
- *            Service service class
  * @param <ENTITY>
+ *            Service service class
+ * @param <ENTITY_ID_TYPE>
  *            Entity entity class
+ * @param <REPOSITORY>
+ *            Spring Data Repository Class/Interface
  */
 public abstract class AbstractRestController<ENTITY, ENTITY_ID_TYPE extends Serializable, REPOSITORY extends IRepositoryService<ENTITY, ENTITY_ID_TYPE>> {
 

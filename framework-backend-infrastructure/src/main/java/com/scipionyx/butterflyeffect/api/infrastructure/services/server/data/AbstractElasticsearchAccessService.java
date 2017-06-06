@@ -17,8 +17,11 @@ import com.scipionyx.butterflyeffect.api.infrastructure.services.server.IService
  * @author Renato Mendes
  *
  * @param <ENTITY>
+ *            Business entity target by the Service
  * @param <REPOSITORY>
- * @param <IDTYPE>
+ *            Spring Data service
+ * @param <ENTITY_ID_TYPE>
+ *            Class for the Business entity id field
  */
 public abstract class AbstractElasticsearchAccessService<REPOSITORY, ENTITY, ENTITY_ID_TYPE extends Serializable>
 		implements IService<ENTITY, ENTITY_ID_TYPE>, IRepositoryService<ENTITY, ENTITY_ID_TYPE> {
