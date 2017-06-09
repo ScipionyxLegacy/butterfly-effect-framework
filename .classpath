@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="framework-api-configuration/src/main/java"/>
+	<classpathentry kind="src" path="framework-api-infrastructure/src/main/java"/>
+	<classpathentry kind="src" path="framework-api-jobmanagement/src/main/java"/>
+	<classpathentry kind="src" path="framework-api-model/src/main/java"/>
+	<classpathentry kind="src" path="framework-api-plugin/src/main/java"/>
+	<classpathentry kind="src" path="framework-api-ui/src/main/java"/>
+	<classpathentry kind="src" path="framework-backend-configuration/src/main/java"/>
+	<classpathentry kind="src" path="framework-backend-infrastructure/src/main/java"/>
+	<classpathentry kind="src" path="framework-backend-jobmanagement/src/main/java"/>
+	<classpathentry kind="src" path="framework-backend-model/src/main/java"/>
+	<classpathentry kind="src" path="framework-frontend-configuration/src/main/java"/>
+	<classpathentry kind="src" path="framework-frontend-core/src/main/java"/>
+	<classpathentry kind="src" path="framework-frontend-jobmanager/src/main/java"/>
+	<classpathentry kind="src" path="framework-frontend-model/src/main/java"/>
+	<classpathentry kind="src" path="framework-frontend-security/src/main/java"/>
+	<classpathentry kind="src" path="framework-frontend-sessionmanager/src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
